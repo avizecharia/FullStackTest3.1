@@ -41,7 +41,7 @@ const getAllPLayearsByDetails = () => __awaiter(void 0, void 0, void 0, function
                 position: selectElm.value,
                 twoPercent: range2.value,
                 threePercent: range3.value,
-                points: rangePoints.value
+                points: rangePoints.value,
             }),
         });
         offerPlayers = yield res.json();
@@ -60,8 +60,13 @@ const deleteTable = () => {
 };
 const rfreachTablePlayers = () => __awaiter(void 0, void 0, void 0, function* () {
     deleteTable();
-    for (const player of offerPlayers) {
-        yield createMewPlayerToTable(player);
+    if (offerPlayers.length > 0) {
+        for (const player of offerPlayers) {
+            yield createMewPlayerToTable(player);
+        }
+    }
+    else {
+        // const newTr :HTMLTableRowElement =
     }
 });
 const createMewPlayerToTable = (player) => __awaiter(void 0, void 0, void 0, function* () {
@@ -75,11 +80,10 @@ const createMewPlayerToTable = (player) => __awaiter(void 0, void 0, void 0, fun
     newTh6.className = "tr6Btn";
     const addPlayer = document.createElement("button");
     addPlayer.textContent = `Add ${player.playerName.split(" ")[0]} to Current Team`;
-    addPlayer.className = "thButton";
     newTh1.textContent = player.playerName;
     newTh2.textContent = player.position;
-    newTh3.textContent = `${player.points}`;
-    newTh4.textContent = `${player.twoPercent}`;
+    newTh3.textContent = `${player.points} `;
+    newTh4.textContent = `${player.twoPercent} `;
     newTh5.textContent = `${player.threePercent}`;
     newTh6.appendChild(addPlayer);
     newTr.appendChild(newTh1);
@@ -96,14 +100,18 @@ const createMewPlayerToTable = (player) => __awaiter(void 0, void 0, void 0, fun
 });
 const addPlayerByPodtion = (player) => {
     const getCorrectPostion = document.querySelector(`#${player.position}`);
+    while (getCorrectPostion.firstChild) {
+        getCorrectPostion.removeChild(getCorrectPostion.firstChild);
+    }
+    getCorrectPostion.className = "insidePlayerDiv";
     const divNAme = document.createElement("div");
     const div2Pre = document.createElement("div");
     const div3Pre = document.createElement("div");
     const divPoints = document.createElement("div");
     divNAme.textContent = player.playerName;
-    div2Pre.textContent = `${player.twoPercent}`;
-    div3Pre.textContent = `${player.threePercent}`;
-    divPoints.textContent = `${player.points}`;
+    div2Pre.textContent = `Two Precente : ${player.twoPercent}%`;
+    div3Pre.textContent = `There Percent : ${player.threePercent}%`;
+    divPoints.textContent = `Points : ${player.points}`;
     getCorrectPostion.appendChild(divNAme);
     getCorrectPostion.appendChild(div2Pre);
     getCorrectPostion.appendChild(div3Pre);

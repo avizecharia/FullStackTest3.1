@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
-  font-family: "Roboto Slab", serif;
+
 }
 body{
     display: flex;
@@ -10,12 +9,14 @@ body{
     justify-content: center;
     flex-direction: column
     ;
+    gap: 20px
+    ;
 }
 nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1827af;
+  background-color: rgb(23 64 139);
   width: 100vw;
   height: 7vh;
   color: aliceblue;
@@ -25,42 +26,77 @@ h1{
     justify-content: center;
     
 }
-#h1Player{
-    color: #1827af;
+h1{
+    color: rgb(23 64 139);
 }
 .playersDetailsBigDiv{
 width: 100vw;
 height: 40vh;
-background-color: #3599a7;
+padding: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+
+justify-content: space-between;
 }
 
+label{
+    padding: 2px;
+    background-color: #b4b3b3;
+    border-radius: 5px;
+
+}
+.inputLabelDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+.insidePlayerDiv{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly   ;
+}
 .playersDetailsSmallDiv{
     display: flex;
-    background-color: #cf8686;
     justify-content: center;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     justify-content: space-evenly;
+    gap: 81px;
 }
 .playersDiv{
-    width: 200px;
-    height: 200px;
-    background-color: #960b0b;
+    width: 160px;
+    height: 180px;
+    background-color: rgb(240 240 240);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border-radius: 10px;
+}
+h4{
+    color: rgb(23 64 139);
 }
 main {
-    width: 60vw;
-    height: 50vh;
-    background-color: #c9cc1f;
+    width: 40vw;
+    height: 70vh;
+    background-color: rgb(240 240 240);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     justify-content: space-evenly;
+    padding: 8px;
+    gap: 30px;
+    border-radius: 10px;
 }
 select{
     width: 20vw;
@@ -73,14 +109,18 @@ select{
     flex-direction: column;
     width: 20vw;
     height: 20vh;
-    background-color: #640a0a;
 }
 .allRange{
     width: 35vh;
     height: 4vh;
 
 }
+#tableDiv{
+    overflow-y: scroll;
+     height:400px;
+}
 table {
+    
     border-collapse: collapse;
     border: 2px solid rgb(140 140 140);
     font-family: sans-serif;
@@ -89,6 +129,7 @@ table {
     width: 100%;
     padding: 0;
     gap: 0;
+    
   }
   caption {
     caption-side: bottom;
@@ -100,12 +141,29 @@ td {
   border: 1px solid rgb(160 160 160);
   padding: 10px 12px;
 }
+button{
+    background-color: rgb(23 64 139);
+    border-radius: 10px;
+    color: #ffffff;
+}
+#navTable{
+    background-color: rgb(201 8 42);
+    color: white;
+}
 tr {
-    background-color: #2d2b55;
+    background-color: #aaaaaa;
+    height: 90px;
+  
+
 }
 .tr6Btn{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+#searchPlayear{
+    border-radius: 5px;
+    width: 9vw;
+    height: 5vh;
 }

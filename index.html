@@ -9,22 +9,37 @@
   </head>
   <body>
     <nav>
-      <h1>NBA FANTASY 2014-2024</h1>
+      <h2>NBA FANTASY 2014-2024</h2>
     </nav>
     <div class="playersDetailsBigDiv">
       <div>
         <h1 id="h1Player">My Fantasy Team</h1>
       </div>
       <div class="playersDetailsSmallDiv">
-        <div class="playersDiv" id="PG"><h4>Point Guard</h4></div>
-        <div class="playersDiv" id="SG"><h4>Shoting Guard</h4></div>
-        <div class="playersDiv" id="SF"><h4>Small Foword</h4></div>
-        <div class="playersDiv" id="PF"><h4>Power Forword</h4></div>
-        <div class="playersDiv" id="C"><h4>Center</h4></div>
+        <div class="playersDiv">
+          <h4>Point Guard</h4>
+          <div id="PG"></div>
+        </div>
+        <div class="playersDiv">
+          <h4>Shoting Guard</h4>
+          <div id="SG"></div>
+        </div>
+        <div class="playersDiv">
+          <h4>Small Foword</h4>
+          <div id="SF"></div>
+        </div>
+        <div class="playersDiv">
+          <h4>Power Forword</h4>
+          <div id="PF"></div>
+        </div>
+        <div class="playersDiv">
+          <h4>Center</h4>
+          <div id="C"></div>
+        </div>
       </div>
     </div>
     <main>
-        <h1>NBA player plplplppl</h1>
+      <h1>NBA Player Search</h1>
 
       <div>
         <select class="select">
@@ -36,48 +51,51 @@
         </select>
       </div>
       <div class="rangeDiv">
-        <label class="range-value" id="rangeP"></label>
-        <input
-        class="allRange"
-          type="range"
-          id="rangePoints"
-          value="0"
-          min="0"
-          max="20000"
-          step="1"
-        />
-        <label class="range-value" id="rangeSec"></label>
+        <div class="inputLabelDiv">
+          <label class="range-value" id="rangeP"></label>
+          <input
+            class="allRange"
+            type="range"
+            id="rangePoints"
+            value="0"
+            min="0"
+            max="20000"
+            step="1"
+          />
+        </div>
+        <div class="inputLabelDiv">
+          <label class="range-value" id="rangeSec"></label>
+          <input
+            class="allRange"
+            type="range"
+            id="rangeTwoPercent"
+            value="0"
+            min="0"
+            max="100"
+            step="1"
+          />
+        </div>
+        <div class="inputLabelDiv">
+          <label class="range-value" id="rangeThird"></label>
 
-        <input
-        class="allRange"
-
-          type="range"
-          id="rangeTwoPercent"
-          value="0"
-          min="0"
-          max="100"
-          step="1"
-        />
-        <label class="range-value" id="rangeThird"></label>
-
-        <input
-        class="allRange"
-
-          type="range"
-          id="rangeThreePercent"
-          value="0"
-          min="0"
-          max="100"
-          step="1"
-        />
+          <input
+            class="allRange"
+            type="range"
+            id="rangeThreePercent"
+            value="0"
+            min="0"
+            max="100"
+            step="1"
+          />
+        </div>
       </div>
       <div>
         <button type="submit" id="searchPlayear">Search player</button>
       </div>
-      <div>
+      <div id="tableDiv">
         <table>
           <thead>
-            <tr>
+            <tr id="navTable">
               <th scope="col" class="allDivMain2" id="Player">Player</th>
               <th scope="col" class="allDivMain2" id="Posttion">Posttion</th>
               <th scope="col" class="allDivMain2" id="Points">Points</th>
