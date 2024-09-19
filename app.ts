@@ -8,17 +8,31 @@ interface resivePlayer {
   season: number[];
   points: number;
 }
-
+const myMain: HTMLElement = document.querySelector("main")!;
 const rangePoints: HTMLInputElement = document.querySelector("#rangePoints")!;
 const rangeLabealPoints: HTMLLabelElement = document.querySelector("#rangeP")!;
 const range2: HTMLInputElement = document.querySelector("#rangeTwoPercent")!;
 const rangeLabeal2: HTMLLabelElement = document.querySelector("#rangeSec")!;
 const range3: HTMLInputElement = document.querySelector("#rangeThreePercent")!;
 const rangeLabeal3: HTMLLabelElement = document.querySelector("#rangeThird")!;
+const saveButton: HTMLButtonElement = document.querySelector(".saveTeam")!;
+const nextButton: HTMLButtonElement = document.querySelector("#next")!;
+const prevButton: HTMLButtonElement = document.querySelector("#prev")!;
+const myCosenPlayers: resivePlayer[] = [];
+// בונוס
+// const myTeams: resivePlayer[][] = [];
 const searchPlayear: HTMLButtonElement =
   document.querySelector("#searchPlayear")!;
 const selectElm: HTMLSelectElement = document.querySelector("select")!;
 const table: HTMLTableElement = document.querySelector("table")!;
+let PGPlayer: resivePlayer;
+let SGPlayer: resivePlayer;
+let SFPlayer: resivePlayer;
+let PFPlayer: resivePlayer;
+let CPlayer: resivePlayer;
+
+
+
 let offerPlayers: resivePlayer[] = [];
 
 const BASEURL: string = "https://nbaserver-q21u.onrender.com/api/filter";
@@ -72,9 +86,40 @@ const rfreachTablePlayers = async (): Promise<void> => {
       await createMewPlayerToTable(player);
     }
   } else {
-    // const newTr :HTMLTableRowElement =
+    alert("there is not player that match this details");
   }
 };
+saveButton.addEventListener("click", async () => {
+  if (myCosenPlayers.length > 3) {
+    console.log("you select all");
+    // בונוס
+    // await addToServer()
+    // myTeams.push(myCosenPlayers);
+    // console.log(myTeams);
+  } else {
+    console.log("need to chose all Players");
+  }
+});
+
+// בונוס
+// const addToServer = async (): Promise<void> => {
+//   try {
+//     const res: Response = await fetch(BASEURL + "AddTeam", {
+//       method: "POST",
+//       headers: { "content-type": "application/json" },
+//       body: JSON.stringify({
+//         players: {
+//           myCosenPlayers,
+//         },
+//       }),
+//     });
+//     console.log(await res.status);
+//     console.log("inside tryyyy");
+//   } catch (err) {
+//     console.log("erorrrrrrrrrr");
+//     console.log(err);
+//   }
+// };
 
 const createMewPlayerToTable = async (player: resivePlayer): Promise<void> => {
   const newTr: HTMLTableRowElement = document.createElement("tr");
@@ -109,13 +154,45 @@ const createMewPlayerToTable = async (player: resivePlayer): Promise<void> => {
 };
 
 const addPlayerByPodtion = (player: resivePlayer): void => {
+   
+    console.log(player);
+    
   const getCorrectPostion: HTMLDivElement = document.querySelector(
     `#${player.position}`
   )!;
   while (getCorrectPostion.firstChild) {
+    
     getCorrectPostion.removeChild(getCorrectPostion.firstChild);
+    
   }
   getCorrectPostion.className = "insidePlayerDiv";
+  // בונוס 
+//  let currentPlayer : resivePlayer 
+// if ("PG" == player.position) {
+//     PGPlayer = player;
+//     currentPlayer = PGPlayer
+//     myCosenPlayers[0] = player;
+//   }
+//   if ("SG" == player.position) {
+//     SGPlayer = player;
+//     currentPlayer = SGPlayer
+//     myCosenPlayers[1] = player;
+//   }
+//   if ("SF" == player.position) {
+//     SFPlayer = player;
+//     currentPlayer = SFPlayer
+//     myCosenPlayers[2] = player;
+//   }
+//   if ("PF" == player.position) {
+//     PFPlayer = player;
+//     currentPlayer = PFPlayer
+//     myCosenPlayers[3] = player;
+//   }
+//   if ("C" == player.position) {
+//     CPlayer = player;
+//     currentPlayer = CPlayer
+//     myCosenPlayers[4] = player;
+//   }
 
   const divNAme: HTMLDivElement = document.createElement("div");
   const div2Pre: HTMLDivElement = document.createElement("div");
@@ -129,4 +206,22 @@ const addPlayerByPodtion = (player: resivePlayer): void => {
   getCorrectPostion.appendChild(div2Pre);
   getCorrectPostion.appendChild(div3Pre);
   getCorrectPostion.appendChild(divPoints);
+  
 };
+
+// בונוס
+// let numberPage = 0;
+
+// nextButton.addEventListener("click", () => {
+//   numberPage++;
+
+//   for (const player of myTeams[numberPage]) {
+//     addPlayerByPodtion(player);
+//   }
+// });
+// prevButton.addEventListener("click", () => {
+//   numberPage--;
+//   for (const player of myTeams[numberPage]) {
+//     addPlayerByPodtion(player);
+//   }
+// });

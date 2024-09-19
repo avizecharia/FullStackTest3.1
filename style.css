@@ -167,3 +167,15 @@ tr {
     width: 9vw;
     height: 5vh;
 }
+.range-value{
+    background-color:rgb(54 54 54);
+    color: white;
+    
+}
+.saveTeam{
+    background-color: #c7c7c7;
+    width: 100px;
+    height: 30px;
+    margin: 20px;
+    border-radius: 5px;
+}
