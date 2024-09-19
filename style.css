@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  font-family: "Roboto Slab", serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+    ;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1827af;
+  width: 100vw;
+  height: 7vh;
+  color: aliceblue;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    
+}
+#h1Player{
+    color: #1827af;
+}
+.playersDetailsBigDiv{
+width: 100vw;
+height: 40vh;
+background-color: #3599a7;
+}
+
+.playersDetailsSmallDiv{
+    display: flex;
+    background-color: #cf8686;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.playersDiv{
+    width: 200px;
+    height: 200px;
+    background-color: #960b0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+main {
+    width: 60vw;
+    height: 50vh;
+    background-color: #c9cc1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+select{
+    width: 20vw;
+    height: 4vh;
+}
+.rangeDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20vw;
+    height: 20vh;
+    background-color: #640a0a;
+}
+.allRange{
+    width: 35vh;
+    height: 4vh;
+
+}
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 0;
+    gap: 0;
+  }
+  caption {
+    caption-side: bottom;
+    padding: 10px;
+    font-weight: bold;
+  }
+  th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 10px 12px;
+}
+tr {
+    background-color: #2d2b55;
+}
+.tr6Btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

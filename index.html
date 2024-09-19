@@ -1,13 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <nav></nav>
-    <div></div>
-    <main></main>
-</body>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <h1>NBA FANTASY 2014-2024</h1>
+    </nav>
+    <div class="playersDetailsBigDiv">
+      <div>
+        <h1 id="h1Player">My Fantasy Team</h1>
+      </div>
+      <div class="playersDetailsSmallDiv">
+        <div class="playersDiv" id="PG"><h4>Point Guard</h4></div>
+        <div class="playersDiv" id="SG"><h4>Shoting Guard</h4></div>
+        <div class="playersDiv" id="SF"><h4>Small Foword</h4></div>
+        <div class="playersDiv" id="PF"><h4>Power Forword</h4></div>
+        <div class="playersDiv" id="C"><h4>Center</h4></div>
+      </div>
+    </div>
+    <main>
+        <h1>NBA player plplplppl</h1>
+
+      <div>
+        <select class="select">
+          <option value="PG" selected>PG</option>
+          <option value="SG">SG</option>
+          <option value="SF">SF</option>
+          <option value="PF">PF</option>
+          <option value="C">C</option>
+        </select>
+      </div>
+      <div class="rangeDiv">
+        <label class="range-value" id="rangeP"></label>
+        <input
+        class="allRange"
+          type="range"
+          id="rangePoints"
+          value="0"
+          min="0"
+          max="20000"
+          step="1"
+        />
+        <label class="range-value" id="rangeSec"></label>
+
+        <input
+        class="allRange"
+
+          type="range"
+          id="rangeTwoPercent"
+          value="0"
+          min="0"
+          max="100"
+          step="1"
+        />
+        <label class="range-value" id="rangeThird"></label>
+
+        <input
+        class="allRange"
+
+          type="range"
+          id="rangeThreePercent"
+          value="0"
+          min="0"
+          max="100"
+          step="1"
+        />
+      </div>
+      <div>
+        <button type="submit" id="searchPlayear">Search player</button>
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" class="allDivMain2" id="Player">Player</th>
+              <th scope="col" class="allDivMain2" id="Posttion">Posttion</th>
+              <th scope="col" class="allDivMain2" id="Points">Points</th>
+              <th scope="col" class="allDivMain2" id="FG%">FG%</th>
+              <th scope="col" class="allDivMain2" id="3P%">3P%</th>
+              <th scope="col" class="allDivMain2" id="Action">Action</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </main>
+  </body>
 </html>
